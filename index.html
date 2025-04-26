@@ -1,0 +1,55 @@
+# Robux Code Generator
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robux Code Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Robux Code Generator</h1>
+    <input type="text" id="username" placeholder="Enter your username">
+    <button onclick="generateCode()">Get Robux Code</button>
+    <div id="result"></div>
+
+    <script>
+        function generateCode() {
+            const username = document.getElementById('username').value;
+            const robuxAmount = Math.floor(Math.random() * 1000) + 1; // Random Robux amount between 1 and 1000
+            const code = `ROBUX-${username.toUpperCase()}-${robuxAmount}`;
+            document.getElementById('result').innerText = `Your Robux Code: ${code}`;
+        }
+    </script>
+
+</body>
+</html>
